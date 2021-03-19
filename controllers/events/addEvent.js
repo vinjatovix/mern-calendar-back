@@ -1,4 +1,4 @@
-const { validateReq } = require('../../helpers/validateReq');
+const { validateReq } = require('../../helpers/helpers');
 const Event = require('../../models/Event');
 
 const addEvent = async (req, res, next) => {

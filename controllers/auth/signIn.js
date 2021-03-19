@@ -1,7 +1,6 @@
-const { validateReq } = require('../../helpers/validateReq');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
-const { generateJWT } = require('../../helpers/jwt');
+const { generateJWT, validateReq } = require('../../helpers/helpers');
 
 const signIn = async (req, res, next) => {
   try {

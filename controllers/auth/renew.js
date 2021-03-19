@@ -1,4 +1,4 @@
-const { generateJWT } = require('../../helpers/jwt');
+const { generateJWT } = require('../../helpers/helpers');
 
 const renew = async (req, res, next) => {
   try {

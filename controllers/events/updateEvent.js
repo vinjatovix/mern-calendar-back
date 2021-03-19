@@ -1,4 +1,4 @@
-const { validateReq } = require('../../helpers/validateReq');
+const { validateEvent,validateReq } = require('../../helpers/helpers');
 const Event = require('../../models/Event');
 
 const updateEvent = async (req, res, next) => {
@@ -8,18 +8,7 @@ const updateEvent = async (req, res, next) => {
     const uid = req.uid;
     const event = await Event.findById(eventId);
 
-    if (!event) {
-      const err = new Error();
-      err.code = 404;
-      err.message = 'not found';
-      throw err;
-    }
-    if (event.user.toString() !== uid) {
-      const err = new Error();
-      err.code = 401;
-      err.message = 'Not authorized';
-      throw err;
-    }
+    validateEvent(event, uid);
     const updateData = {
       ...req.body,
       user: uid,

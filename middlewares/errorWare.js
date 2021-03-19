@@ -1,4 +1,4 @@
-const { identifyError } = require("../helpers/identifyError");
+const { identifyError } = require('../helpers/helpers');
 
 function errorWare() {
   // eslint-disable-next-line no-unused-vars
@@ -10,4 +10,3 @@ function errorWare() {
 }
 
 module.exports = { errorWare };
-
