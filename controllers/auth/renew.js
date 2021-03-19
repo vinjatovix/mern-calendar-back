@@ -1,6 +1,12 @@
-const renew = (req, res, next) => {
+const { generateJWT } = require('../../helpers/jwt');
+
+const renew = async (req, res, next) => {
   try {
-    res.status(200).json({ ok: true, msg: "refresh token" });
+    const { uid, username, email } = req;
+
+    const token = await generateJWT({ uid, username, email });
+
+    res.status(200).json({ ok: true, msg: 'refresh token', uid,username,email, token });
   } catch (err) {
     next(err);
   }

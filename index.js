@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const { errorWare } = require('./middlewares/errorWare');
 const { dbConfig } = require('./database/config');
 
 const app = express();
 dbConfig();
 
+app.use(cors());
 app.use(express.static('public'));
 
 app.use(express.json());
