@@ -12,4 +12,4 @@ function validateEvent(event, uid) {
     throw err;
   }
 }
-exports.validateEvent = { validateEvent };
+module.exports = { validateEvent };
