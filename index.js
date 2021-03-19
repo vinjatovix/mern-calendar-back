@@ -18,5 +18,5 @@ app.use('/api/events', require('./routes/events'));
 app.use(errorWare());
 
 app.listen(process.env.PORT, () => {
-  console.log(`Bender listening on ${process.env.HOST}:${process.env.PORT}`);
+  console.log(`Bender listening on port ${process.env.PORT}`);
 });
