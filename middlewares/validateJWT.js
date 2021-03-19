@@ -15,7 +15,7 @@ const validateJWT = (req, res, next) => {
   } catch (err) {
     err.ok = false;
     err.code = 401;
-    err.details = 'Invalid token';
+    err.message = 'Invalid token';
     next(err);
   }
 };

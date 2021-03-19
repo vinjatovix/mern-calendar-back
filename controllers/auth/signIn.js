@@ -1,4 +1,4 @@
-const { validateReq } = require('../utils/validateReq');
+const { validateReq } = require('../../helpers/validateReq');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const { generateJWT } = require('../../helpers/jwt');
@@ -13,7 +13,7 @@ const signIn = async (req, res, next) => {
       const err = new Error();
       err.ok = false;
       err.code = 400;
-      err.details = 'This mail has been already registered';
+      err.message = 'This mail has been already registered';
       throw err;
     }
 
